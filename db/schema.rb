@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_145603) do
+ActiveRecord::Schema.define(version: 2020_05_30_153954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,5 +120,15 @@ ActiveRecord::Schema.define(version: 2020_05_30_145603) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "wb_api_keys", force: :cascade do |t|
+    t.string "key", null: false
+    t.bigint "organization_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["key"], name: "index_wb_api_keys_on_key"
+    t.index ["organization_id"], name: "index_wb_api_keys_on_organization_id"
+  end
+
   add_foreign_key "sales_infos", "items"
+  add_foreign_key "wb_api_keys", "organizations"
 end
