@@ -7,9 +7,9 @@ GraphQL::Errors.configure(GraphqlSchema) do
     GraphQL::ExecutionError.new(exception.record.errors.full_messages.join("\n"))
   end
 
-  # rescue_from StandardError do |exception|
-  #   GraphQL::ExecutionError.new("Please try to execute the query for this field later")
-  # end
+  rescue_from StandardError do |exception|
+    GraphQL::ExecutionError.new("Please try to execute the query for this field later")
+  end
 
   # rescue_from CustomError do |exception, object, arguments, context|
   #   error = GraphQL::ExecutionError.new("Error found!")
