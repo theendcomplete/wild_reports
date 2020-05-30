@@ -10,5 +10,11 @@ module Types
     def stock
       object.stock_infos.last
     end
+
+    field :sales, [Types::SalesInfoType], null: true
+    def sales
+      object.sales_infos.last(5)
+    end
+
   end
 end
