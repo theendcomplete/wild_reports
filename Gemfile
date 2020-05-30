@@ -10,6 +10,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "devise" # Use devise as authentication module
 gem "devise-jwt", "~> 0.5.8" # Use JWT token authentication with devise
 gem "graphql"
+gem "faraday"
 gem "graphql-errors"
 gem "jbuilder", "~> 2.5"
 gem "pg"

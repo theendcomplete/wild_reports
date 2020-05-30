@@ -33,4 +33,7 @@
 #
 class StockInfo < ApplicationRecord
   belongs_to :item
+
+
+  validates :last_change_date, uniqueness: {scope: :item}, presence: true
 end

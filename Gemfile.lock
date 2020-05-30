@@ -111,6 +111,8 @@ GEM
       tty-pager (~> 0.12.0)
       tty-screen (~> 0.6.5)
       tty-tree (~> 0.3.0)
+    faraday (1.0.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -140,6 +142,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     msgpack (1.3.0)
+    multipart-post (2.1.1)
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
@@ -293,6 +296,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker (~> 1.8)
+  faraday
   graphql
   graphql-errors
   jbuilder (~> 2.5)
