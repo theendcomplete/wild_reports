@@ -17,13 +17,16 @@ ActiveRecord::Schema.define(version: 2020_05_30_142759) do
 
   create_table "items", force: :cascade do |t|
     t.bigint "organization_id"
-    t.string "name"
-    t.string "barcode"
-    t.string "wb_code"
-    t.string "code"
+    t.string "name", default: "", null: false
+    t.string "barcode", default: "", null: false
+    t.string "wb_code", default: "", null: false
+    t.string "code", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["barcode", "organization_id"], name: "index_items_on_barcode_and_organization_id", unique: true
+    t.index ["code", "organization_id"], name: "index_items_on_code_and_organization_id", unique: true
     t.index ["organization_id"], name: "index_items_on_organization_id"
+    t.index ["wb_code", "organization_id"], name: "index_items_on_wb_code_and_organization_id", unique: true
   end
 
   create_table "organizations", force: :cascade do |t|
