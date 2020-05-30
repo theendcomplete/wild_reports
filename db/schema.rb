@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_145219) do
+ActiveRecord::Schema.define(version: 2020_05_30_145603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(version: 2020_05_30_145219) do
     t.string "inn"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sales_infos", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.string "number"
+    t.datetime "date"
+    t.datetime "last_change_date"
+    t.integer "quantity"
+    t.integer "total_price"
+    t.integer "discount_percent"
+    t.string "order_id"
+    t.string "income_id"
+    t.string "sale_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id", "last_change_date"], name: "index_sales_infos_on_item_id_and_last_change_date", unique: true
+    t.index ["item_id"], name: "index_sales_infos_on_item_id"
   end
 
   create_table "stock_infos", force: :cascade do |t|
@@ -103,4 +120,5 @@ ActiveRecord::Schema.define(version: 2020_05_30_145219) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "sales_infos", "items"
 end

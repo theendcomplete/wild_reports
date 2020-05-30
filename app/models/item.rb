@@ -21,4 +21,5 @@
 class Item < ApplicationRecord
   belongs_to :organization
   has_many :stock_infos
+  has_many :sales_infos
 end
