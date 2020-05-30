@@ -28,6 +28,6 @@
 class SalesInfo < ApplicationRecord
   belongs_to :item
 
-  validates :last_change_date, uniqueness: {scope: [:item, :order_id]}, presence: true
+  validates :last_change_date, uniqueness: { scope: [:item, :last_change_date, :order_id] }, presence: true
 
 end
