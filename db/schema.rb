@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_30_142759) do
+ActiveRecord::Schema.define(version: 2020_05_30_145219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,33 @@ ActiveRecord::Schema.define(version: 2020_05_30_142759) do
     t.string "inn"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stock_infos", force: :cascade do |t|
+    t.bigint "item_id"
+    t.datetime "last_change_date"
+    t.string "supplier_article"
+    t.string "tech_size"
+    t.integer "quantity"
+    t.boolean "is_supply"
+    t.boolean "is_realization"
+    t.integer "quantity_full"
+    t.integer "quantity_not_in_orders"
+    t.string "warehouse_name"
+    t.integer "in_way_to_client"
+    t.integer "in_way_from_client"
+    t.integer "nm_id"
+    t.string "subject"
+    t.string "category"
+    t.integer "days_on_site"
+    t.string "brand"
+    t.integer "price"
+    t.integer "discount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id", "last_change_date"], name: "index_stock_infos_on_item_id_and_last_change_date", unique: true
+    t.index ["item_id"], name: "index_stock_infos_on_item_id"
+    t.index ["warehouse_name"], name: "index_stock_infos_on_warehouse_name"
   end
 
   create_table "user_organizations", force: :cascade do |t|
