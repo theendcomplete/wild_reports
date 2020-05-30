@@ -13,7 +13,7 @@
 #  index_user_organizations_on_organization_id  (organization_id)
 #  index_user_organizations_on_user_id          (user_id)
 #
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe UserOrganization, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"

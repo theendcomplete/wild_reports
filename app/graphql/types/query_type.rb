@@ -6,6 +6,5 @@ module Types
     def organizations
       context[:current_user]&.organizations
     end
-
   end
 end

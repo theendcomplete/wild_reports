@@ -31,7 +31,7 @@
 #  index_stock_infos_on_item_id_and_last_change_date  (item_id,last_change_date) UNIQUE
 #  index_stock_infos_on_warehouse_name                (warehouse_name)
 #
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe StockInfo, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"

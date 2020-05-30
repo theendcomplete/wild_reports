@@ -18,7 +18,7 @@
 #  index_items_on_organization_id              (organization_id)
 #  index_items_on_wb_code_and_organization_id  (wb_code,organization_id) UNIQUE
 #
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Item, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"

@@ -22,4 +22,22 @@ class Item < ApplicationRecord
   belongs_to :organization
   has_many :stock_infos
   has_many :sales_infos
+
+  scope :sold_at_date, lambda { |date = 1.day.ago|
+    joins(:sales_infos).where(sales_infos: {date: date.beginning_of_day..date.end_of_day})
+  }
+
+  scope :with_donation_count_gt_than, lambda { |count, confirmed = 1|
+    # TODO: refactor, analytics use only
+    case confirmed
+    when 0
+      joins(:donations).where(donations: {confirmed_at: nil}).group("users.id, users.created_at").having("count(user_id) > ?", count)
+    when 1
+      joins(:donations).where.not(donations: {confirmed_at: nil}).group("users.id, users.created_at").having("count(user_id) > ?", count)
+    when 3
+      joins(:donations).group("users.id, users.created_at").having("count(user_id) > ?", count)
+    else
+      joins(:donations).group("users.id, users.created_at").having("count(user_id) > ?", count)
+    end
+  }
 end

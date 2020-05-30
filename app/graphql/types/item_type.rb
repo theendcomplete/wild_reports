@@ -5,5 +5,10 @@ module Types
     field :wb_code, String, null: false
     field :code, String, null: false
     field :organization, Types::OrganizationType, null: false
+    field :stock, Types::StockInfoType, null: true
+
+    def stock
+      object.stock_infos.last
+    end
   end
 end

@@ -33,6 +33,5 @@
 #
 FactoryBot.define do
   factory :stock_info do
-    
   end
 end

@@ -2,8 +2,8 @@
 
 namespace :import do
   task items: :environment do
-    require 'csv'
-    items_path = 'lib/tasks/import/items.csv'
+    require "csv"
+    items_path = "lib/tasks/import/items.csv"
 
     items_csv = CSV.open(items_path)
 

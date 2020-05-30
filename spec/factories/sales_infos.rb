@@ -27,6 +27,5 @@
 #
 FactoryBot.define do
   factory :sales_info do
-    
   end
 end

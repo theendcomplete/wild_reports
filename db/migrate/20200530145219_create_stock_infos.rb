@@ -24,7 +24,6 @@ class CreateStockInfos < ActiveRecord::Migration[6.0]
       t.timestamps
 
       t.index(%i[item_id last_change_date], unique: true)
-
     end
   end
 end

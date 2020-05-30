@@ -18,12 +18,13 @@ gem "rack-cors"
 gem "rack-cors"
 
 group :development, :test do
-  gem "rspec-rails", "~> 4.0.0"
-  gem "standard"
   gem "awesome_print" # better console ouput for objects -> ap object.inspect
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "dotenv-rails" # craate a .env file to set local environment variables
   gem "factory_bot_rails" # model mocks with factory bot
+  gem "rspec-rails", "~> 4.0.0"
+  gem "standard"
+  gem "bullet"
 end
 
 group :test do
