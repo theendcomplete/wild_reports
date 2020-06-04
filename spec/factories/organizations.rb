@@ -10,7 +10,7 @@
 #
 FactoryBot.define do
   factory :organization do
-    name { "MyString" }
-    inn { "MyString" }
+    name { Faker::Commerce.department }
+    inn { Faker::Russian.inn }
   end
 end

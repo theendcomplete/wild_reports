@@ -15,6 +15,5 @@ module Types
     def sales
       object.sales_infos.last(5)
     end
-
   end
 end
