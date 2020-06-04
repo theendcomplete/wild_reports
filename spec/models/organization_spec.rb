@@ -12,7 +12,6 @@ require "rails_helper"
 
 RSpec.describe Organization, type: :model do
   subject(:organization) { build(:organization) }
-  # let(:user_list) { create_list(:user, 4) }
 
   context "associations" do
     it { is_expected.to have_many(:users) }
@@ -43,8 +42,9 @@ RSpec.describe Organization, type: :model do
     let(:user) { create(:user, :customer) }
 
     it 'can be created by user' do
-      user.organizations << organization
-      expect(organization.users).to include(user)
+      user.organizations.create(organization.attributes)
+
+      expect(user.organizations.count).to eq(1)
     end
 
     it 'checks that user can be added to organization' do
