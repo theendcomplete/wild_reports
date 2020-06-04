@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: items
@@ -20,5 +22,10 @@
 #
 FactoryBot.define do
   factory :item do
+    barcode { rand(99_999_999) }
+    code { Faker::Internet.unique.device_token }
+    name { Faker::Beer.unique.name }
+    wb_code { Faker::Internet.unique.device_token }
+    organization
   end
 end
