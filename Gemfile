@@ -17,6 +17,7 @@ gem "pg"
 gem "puma", "~> 3.12"
 gem "rack-cors"
 gem "rack-cors"
+gem "validates_russian"
 
 group :development, :test do
   gem "awesome_print" # better console ouput for objects -> ap object.inspect

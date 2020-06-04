@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: organizations
@@ -13,4 +15,7 @@ class Organization < ApplicationRecord
   has_many :users, through: :user_organizations
   has_many :items
   has_one :wb_api_key
+
+  validates :name, presence: true, length: {maximum: 150}
+  validates :inn, presence: true, inn_format: true
 end

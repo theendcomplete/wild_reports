@@ -270,6 +270,8 @@ GEM
     unicode-display_width (1.6.0)
     unicode_utils (1.4.0)
     uniform_notifier (1.13.0)
+    validates_russian (0.1.0)
+      activemodel (>= 3.0.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     warden-jwt_auth (0.3.6)
@@ -317,6 +319,7 @@ DEPENDENCIES
   standard
   timecop
   tzinfo-data
+  validates_russian
 
 RUBY VERSION
    ruby 2.6.5p114
