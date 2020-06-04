@@ -33,5 +33,12 @@
 #
 FactoryBot.define do
   factory :stock_info do
+    brand { Faker::Beer.name }
+    category { Faker::Beer.style }
+    days_on_site { rand(1..200) }
+    discount { rand(0..25) }
+    last_change_date { DateTime.current }
+    price { Faker::Commerce.price }
+    quantity { rand(1..100) }
   end
 end

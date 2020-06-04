@@ -23,7 +23,7 @@
 FactoryBot.define do
   factory :item do
     barcode { rand(99_999_999) }
-    code { Faker::Internet.unique.device_token }
+    code { Faker::Commerce.unique.product_name }
     name { Faker::Beer.unique.name }
     wb_code { Faker::Internet.unique.device_token }
     organization

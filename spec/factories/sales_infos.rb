@@ -27,5 +27,15 @@
 #
 FactoryBot.define do
   factory :sales_info do
+    date { Date.current }
+    discount_percent { 0 }
+    last_change_date { DateTime.current }
+    number { "" }
+    quantity { rand(1..100) }
+    total_price { Faker::Commerce.price }
+    income_id { Faker::String.unique.random }
+    item_id { Faker::String.unique.random }
+    order_id { Faker::String.random }
+    sale_id { Faker::String.random }
   end
 end

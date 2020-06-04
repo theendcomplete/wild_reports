@@ -39,10 +39,11 @@ RSpec.describe GraphqlSchema do
           passwordConfirmation: password,
           resetPasswordToken: @user.reset_password_token
         )
-
+        # rubocop:disable Lint/UselessAssignment
         # Mock get user with token from devise
         with_reset_password_token = double
         allow(User).to receive(:with_reset_password_token) { @user }
+        # rubocop:enable Lint/UselessAssignment
       end
 
       let(:user) { @user }

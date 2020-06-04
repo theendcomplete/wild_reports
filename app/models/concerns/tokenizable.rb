@@ -5,9 +5,11 @@ module Tokenizable
 
   included do
     def token
+      # rubocop:disable Lint/UselessAssignment
       token, payload = user_encoder.call(
         self, devise_scope, aud_headers
       )
+      # rubocop:enable Lint/UselessAssignment
       token
     end
 
