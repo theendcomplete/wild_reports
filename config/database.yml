@@ -1,5 +1,5 @@
 postgres: &postgres
-  host: localhost
+  host: <%= ENV['APP_DATABASE_NAME'] || "localhost"%>
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
