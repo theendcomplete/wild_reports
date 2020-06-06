@@ -4,7 +4,7 @@ orbs:
   ruby: circleci/ruby@0.1.2
 
 references:
-  default_ruby_version: &default_ruby_version 2.6.3-stretch-node
+  default_ruby_version: &default_ruby_version 2.7-alpine
   default_postgress_version: &default_postgress_version 9.5-alpine
   ruby_envs: &ruby_envs
     environment:
@@ -17,8 +17,8 @@ references:
       RAILS_ENV: test
   postgres_envs: &postgres_envs
     environment:
-      POSTGRES_USER: circleci-demo-ruby
-      POSTGRES_DB: rails_blog_test
+      POSTGRES_USER: postgres
+      POSTGRES_DB: wildrepostrstest
       POSTGRES_PASSWORD: ""
 
 executors:
