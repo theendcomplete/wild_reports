@@ -19,4 +19,5 @@
 #
 class WbApiKey < ApplicationRecord
   belongs_to :organization
+  validates :key, presence: true
 end

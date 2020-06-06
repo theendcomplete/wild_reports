@@ -19,7 +19,7 @@
 #
 FactoryBot.define do
   factory :wb_api_key do
-    key { "MyString" }
+    key { Faker::String.unique.random }
     organization { nil }
   end
 end

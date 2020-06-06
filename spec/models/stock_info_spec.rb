@@ -34,5 +34,16 @@
 require "rails_helper"
 
 RSpec.describe StockInfo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:stock_info) { build(:stock_info) }
+
+  context "associations" do
+    let(:item) { create(:item) }
+
+    it { is_expected.to belong_to(:item) }
+
+    it "is can be associated with item" do
+      stock_info.item = item
+      expect(stock_info).to be_valid
+    end
+  end
 end

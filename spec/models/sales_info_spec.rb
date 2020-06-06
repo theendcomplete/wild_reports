@@ -28,5 +28,16 @@
 require "rails_helper"
 
 RSpec.describe SalesInfo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject(:sales_info) { build(:sales_info) }
+
+  context "associations" do
+    let(:item) { create(:item) }
+
+    it { is_expected.to belong_to(:item) }
+
+    it "is can be associated with item" do
+      sales_info.item = item
+      expect(sales_info).to be_valid
+    end
+  end
 end
